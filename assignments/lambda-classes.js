@@ -56,7 +56,7 @@ class ProjectManager extends Instructor {
             this.favInstructor = pmattributes.favInstructor;
         }
 
-        standup (channel) {
+        standUp (channel) {
             return `${this.name} announces to ${channel}, @channel standy times!​​​​​`
         }
 
@@ -138,3 +138,5 @@ console.log(tom.demo("constructors"));
 console.log(jerry.demo("classes"));
 console.log(tom.grade(nikki, "constructors"));
 console.log(nicole.listsSubjects());
+console.log(thomas.standUp("san-diego"));
+console.log(john.debugsCode(nicole, "HTML"));
