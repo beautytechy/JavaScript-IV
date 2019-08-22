@@ -33,35 +33,35 @@ class Student extends Person {
         this.catchPhrase = studentattributes.catchPhrase;
         }
 
-        listsSubjects(Student, subject){
+        listsSubjects(subject){
             return `${this.favSubjects}`;
         }
         demo(){
-            return `${Student.name} receives a perfect score on ${subject}`
+            return `${this.name} receives a perfect score on ${subject}`
         }
 
          PRAssignment(subject) {
-            return `${Student.name} has submitted a PR for ${subject}`
+            return `${this.name} has submitted a PR for ${subject}`
         }
 
         sprintChallenge() {
-            return `${student.name} begun sprint challenge on ${subject}`
+            return `${this.name} begun sprint challenge on ${subject}`
         }
 }
 
-class ProjectManagers extends Instructor {
+class ProjectManager extends Instructor {
         constructor (pmattributes) {
             super (pmattributes);
-            this.NewgradClassName = gradClassName;
-            this.NewfavInstructor = favInstructor;
+            this.gradClassName = pmattributes.gradClassName;
+            this.favInstructor = pmattributes.favInstructor;
         }
 
         standup (channel) {
             return `${this.name} announces to ${channel}, @channel standy times!​​​​​`
         }
 
-        debugsCode (subject) {
-            return `${name} debugs ${student.name}'s code on ${subject}`
+        debugsCode (Student, subject) {
+            return `${this.name} debugs ${Student.name}'s code on ${subject}`
         }
 }
     
@@ -116,8 +116,25 @@ const nikki = new Student ({
     favSubjects: ['Python', 'React', 'C#']
 })
 
+const thomas = new ProjectManager ({
+    name: 'Thomas',
+    location: 'USA',
+    age: 30,
+    gradClassName: 'Web9',
+    favInstructor: 'Jerry',
+})
+
+    const john = new ProjectManager ({
+        name: 'John',
+        location: 'USA',
+        age: 30,
+        gradClassName: 'Web9',
+        favInstructor: 'Tom',
+    })
+
 console.log(fred.speak());
 console.log(wilma.speak());
 console.log(tom.demo("constructors"));
 console.log(jerry.demo("classes"));
 console.log(tom.grade(nikki, "constructors"));
+console.log(nicole.listsSubjects());
