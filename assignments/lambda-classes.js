@@ -57,7 +57,7 @@ class Student extends Person {
         }
 
         graduate () {
-            if (`${this.currentgrade}` > 70){
+            if (this.currentgrade > 70){
             return `Congradulations, ${this.name}!`
         } else {
             return "Keep grading"
