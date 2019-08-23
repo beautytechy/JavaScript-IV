@@ -44,7 +44,7 @@ class Student extends Person {
             return `${this.name} has submitted a PR for ${subject}`
         }
 
-        sprintChallenge() {
+        sprintChallenge(subject) {
             return `${this.name} begun sprint challenge on ${subject}`
         }
 }
@@ -124,8 +124,8 @@ const thomas = new ProjectManager ({
     favInstructor: 'Jerry',
 })
 
-    const john = new ProjectManager ({
-        name: 'John',
+    const johnson = new ProjectManager ({
+        name: 'Johnson',
         location: 'USA',
         age: 30,
         gradClassName: 'Web9',
@@ -137,6 +137,9 @@ console.log(wilma.speak());
 console.log(tom.demo("constructors"));
 console.log(jerry.demo("classes"));
 console.log(tom.grade(nikki, "constructors"));
+console.log(jerry.grade(nicole, "classes"));
 console.log(nicole.listsSubjects());
-console.log(thomas.standUp("san-diego"));
-console.log(john.debugsCode(nicole, "HTML"));
+console.log(nicole.PRAssignment("Javascript-I"));
+console.log(nicole.sprintChallenge("accessibility"));
+console.log(johnson.standUp("san-diego"));
+console.log(thomas.debugsCode(nicole, "HTML"));
