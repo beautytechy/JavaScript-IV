@@ -26,7 +26,7 @@ class Instructor extends Person {
 
         assignpoints (Student) {
             Student.currentgrade = 
-           `${Student.grade}` - (Math.random()* (10 - -10)) + -10;
+           Student.grade - (Math.random()* (10 - -10)) + -10;
            return Student.currentgrade;
         }
     }
@@ -166,3 +166,4 @@ console.log(tom.assignpoints(nicole));
 console.log(johnson.assignpoints(nikki));
 console.log(nikki.currentgrade);
 console.log(nicole.graduate());
+console.log(nikki.graduate());
