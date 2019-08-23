@@ -23,6 +23,12 @@ class Instructor extends Person {
         grade(Student, subject){
             return `${Student.name} receives a perfect score on ${subject}`
         }
+
+        assignpoints (Student) {
+            Student.currentgrade = 
+           `${Student.grade}` - (Math.random()* (10 - -10)) + -10;
+           return Student.currentgrade;
+        }
     }
 
 class Student extends Person {
@@ -31,6 +37,8 @@ class Student extends Person {
         this.previousBackground = studentattributes.previousBackground;
         this.favSubjects = studentattributes.favSubjects;
         this.catchPhrase = studentattributes.catchPhrase;
+        this.grade = studentattributes.grade;
+        this.currentgrade = studentattributes.currentgrade
         }
 
         listsSubjects(subject){
@@ -47,7 +55,16 @@ class Student extends Person {
         sprintChallenge(subject) {
             return `${this.name} begun sprint challenge on ${subject}`
         }
+
+        graduate () {
+            if (`${this.currentgrade}` > 70){
+            return `Congradulations, ${this.name}!`
+        } else {
+            return "Keep grading"
+        }
+    }
 }
+
 
 class ProjectManager extends Instructor {
         constructor (pmattributes) {
@@ -104,7 +121,8 @@ const nicole = new Student ({
     age: 21,
     previousBackground: 'Sales',
     className: 'Web-Dev23',
-    favSubjects: ['Html', 'CSS', 'JavaScript']
+    favSubjects: ['Html', 'CSS', 'JavaScript'],
+    grade: 80,
 })
 
 const nikki = new Student ({
@@ -113,7 +131,8 @@ const nikki = new Student ({
     age: 22,
     previousBackground: 'Beauty',
     className: 'Web-Dev21',
-    favSubjects: ['Python', 'React', 'C#']
+    favSubjects: ['Python', 'React', 'C#'],
+    grade: 99,
 })
 
 const thomas = new ProjectManager ({
@@ -127,7 +146,7 @@ const thomas = new ProjectManager ({
     const johnson = new ProjectManager ({
         name: 'Johnson',
         location: 'USA',
-        age: 30,
+        age: 35,
         gradClassName: 'Web9',
         favInstructor: 'Tom',
     })
@@ -143,3 +162,7 @@ console.log(nicole.PRAssignment("Javascript-I"));
 console.log(nicole.sprintChallenge("accessibility"));
 console.log(johnson.standUp("san-diego"));
 console.log(thomas.debugsCode(nicole, "HTML"));
+console.log(tom.assignpoints(nicole));
+console.log(johnson.assignpoints(nikki));
+console.log(nikki.currentgrade);
+console.log(nicole.graduate());
